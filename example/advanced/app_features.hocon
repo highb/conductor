@@ -1,0 +1,18 @@
+my_app.new_algorithm: {
+  # Boarding pass is enabled by default, but if you want to be explicit you
+  # can specify.
+  enabled: true
+  # Boarding pass will automatically expire 30 days from the creation date
+  # unless an explicit expiration_date is given (see advanced example)
+  creation_date: "Jan 24 14:05:55 PST 2017"
+  # Override the expiration_date for longer-lived boarding pass
+  expiration_date: "Mar 24 14:05:55 PST 2017"
+  description: "Our new and improved algorithm"
+  # Reference to tracking ticket for the boarding pass
+  ticket: "MYAPP-123"
+  # If conductor is given the current version of the project the during
+  # initialization, and that version meets or exceeds this version, it will
+  # automatically throw an exception in order to prevent the boarding pass
+  # from being silently disabled when the product ships.
+  target_version: "2.0.0"
+}
