@@ -1,0 +1,9 @@
+#! /usr/bin/env ruby
+# frozen_string_literal: true
+
+require "stationmaster"
+require "stationmaster/cli"
+require "stationmaster/identity"
+
+Process.setproctitle Stationmaster::Identity.version_label
+Stationmaster::CLI.start
