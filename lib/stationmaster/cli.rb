@@ -25,15 +25,15 @@ module Stationmaster
       super args, options, config
     end
 
-    desc "-c, [--config]", _("Manage gem configuration") + %( ("#{configuration.computed_path}").)
+    desc "-c, [--config]", _("Manage Stationmaster configuration") + %( ("#{configuration.computed_path}").)
     map %w[-c --config] => :config
     method_option :edit,
                   aliases: "-e",
-                  desc: _("Edit gem configuration."),
+                  desc: _("Edit Stationmaster configuration."),
                   type: :boolean, default: false
     method_option :info,
                   aliases: "-i",
-                  desc: _("Print gem configuration."),
+                  desc: _("Print Stationmaster configuration."),
                   type: :boolean, default: false
     def config
       path = self.class.configuration.computed_path
@@ -44,7 +44,7 @@ module Stationmaster
       end
     end
 
-    desc "-v, [--version]", _("Show gem version.")
+    desc "-v, [--version]", _("Show Stationmaster version.")
     map %w[-v --version] => :version
     def version
       say Identity.version_label
