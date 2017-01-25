@@ -2,3 +2,4 @@
 
 require "stationmaster/identity"
 require "stationmaster/cli"
+require "stationmaster/boarding_info"

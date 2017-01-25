@@ -33,7 +33,20 @@ module Stationmaster
     class_option :file,
       aliases: "-f",
       desc: _("Specify which config file contains the boarding information."),
-      type: :string, default: "boarding.hocon"
+      type: :string, default: "boarding.conf"
+
+    desc "s, [setup]", _("Create new config file for storing boarding information.")
+    map %w[s setup] => :setup
+    def setup
+      if File.exist?(options[:file])
+        say _("Boarding informatoin file %{file} already exists.") % { file: options[:file] }
+      else
+        say _("Creating boarding config file %{file}...") % { file: options[:file] }
+        File.open(options[:file], "w+") do |f|
+          f.write("{}")
+        end
+      end
+    end
 
     desc "n, [new] NAME", _("Create a new boarding ticket")
     map %w[n new] => :new_ticket
@@ -58,9 +71,8 @@ module Stationmaster
                   desc: _("The target version for the boarding ticket."),
                   type: :string, default: nil
     def new_ticket(name)
-      unless File.exist?(options[:file])
-        say _("Creating boarding config file %{file}...") % { file: options[:file] }
-      end
+      config = fetch_config(options[:file])
+      puts config
 
       say _("Creating new boarding ticket for %{name}...") % { name: name }
 
@@ -113,6 +125,7 @@ module Stationmaster
                   type: :string, default: nil
     def update_ticket(name)
       config = fetch_config(options[:file])
+      puts config
 
       say _("Updating boarding ticket %{name}...") % { name: name}
 
@@ -145,6 +158,7 @@ module Stationmaster
     map %w[s show] => :show_ticket
     def show_ticket(name)
       config = fetch_config(options[:file])
+      puts config
 
       say _("Grepping around for the ticket %{name}...")
       say _("When %{name} expires...")
@@ -154,6 +168,7 @@ module Stationmaster
     map %w[b board] => :board_feature
     def board_feature(name)
       config = fetch_config(options[:file])
+      puts config
 
       say _("Boarding feature %{name}...")
       say _("I hope you've removed all references to the %{name}...") % { name: name}
@@ -195,6 +210,7 @@ module Stationmaster
       def fetch_config(file)
         if File.exist?(file)
           say _("Fetching config from %{file}...") % { file: file }
+          return Stationmaster::BoardingInfo.new(options[:file])
         else
           say _("Boarding config file %{file} does not exist.") % { file: file }
           exit 1

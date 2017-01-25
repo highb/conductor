@@ -3,6 +3,7 @@ PATH
   specs:
     stationmaster (0.1.0)
       gettext-setup (~> 0.13)
+      hocon (~> 1.2)
       runcom (~> 0.3)
       thor (~> 0.19)
       thor_plus (~> 4.1)
@@ -61,6 +62,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    hocon (1.2.4)
     ice_nine (0.11.2)
     json (2.0.3)
     listen (3.1.5)

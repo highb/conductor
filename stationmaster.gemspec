@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "thor_plus", "~> 4.1"
   spec.add_dependency "runcom", "~> 0.3"
   spec.add_dependency "gettext-setup", "~> 0.13"
+  spec.add_dependency "hocon", "~> 1.2"
   spec.add_development_dependency "rake", "~> 11.0"
   spec.add_development_dependency "gemsmith", "~> 8.1"
   spec.add_development_dependency "pry", "~> 0.10"
