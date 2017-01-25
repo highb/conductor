@@ -1,0 +1,33 @@
+# Japanese translations for Stationmaster Release Toggler package.
+# Copyright (C) 2017 Puppet Labs, LLC.
+# This file is distributed under the same license as the Stationmaster Release Toggler package.
+# Automatically generated, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Stationmaster Release Toggler \n"
+"Report-Msgid-Bugs-To: docs@puppetlabs.com\n"
+"POT-Creation-Date: 2017-01-24 15:22-0800\n"
+"PO-Revision-Date: 2017-01-24 15:22-0800\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Manage gem configuration"
+msgstr "宝石の設定を管理する"
+
+msgid "Edit gem configuration."
+msgstr "宝石の構成を編集する"
+
+msgid "Print gem configuration."
+msgstr "宝石の構成を印刷する"
+
+msgid "Show gem version."
+msgstr "宝石のバージョンを表示する"
+
+msgid "Show this message or get help for a command."
+msgstr "このメッセージを表示するか、コマンドのヘルプを表示する"
